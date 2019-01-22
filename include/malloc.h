@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** c project malloc.h
 ** File description:
-** made by Martin Vantalon
+** made by Martin Vantalon and Thibault FOUCOU
 */
 
 #ifndef MALLOC_H_
@@ -16,11 +16,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-struct header_s {
+typedef struct header_s {
 	size_t size;
 	int is_free;
-	struct header_t *next;
-    struct header_t *prev;
+	struct header_s *next;
+    struct header_s *prev;
 } header_t;
 
+void *my_malloc(size_t size);
 #endif
