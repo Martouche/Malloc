@@ -5,19 +5,12 @@
 ** made by Martin Vantalon and Thibault FOUCOU
 */
 
-#include "malloc.h"
+#include "../include/malloc.h"
 
-void *my_malloc(size_t size)
-{
-	void *block;
+header_t *head = NULL;
+header_t *tail = NULL;
 
-	block = sbrk(size);
-	if (block == (void*) -1)
-		return NULL;
-	return block;
-}
-
-/*header_t *get_free_block(size_t size)
+header_t *get_free_block(size_t size)
 {
 	header_t *curr;
 
@@ -27,4 +20,25 @@ void *my_malloc(size_t size)
 		curr = curr->next;
 	}
 	return NULL;
-}*/
+}
+
+void *my_malloc(size_t size)
+{
+	void *block;
+    header_t *header;
+	block = sbrk(size);
+
+    if (!size) {
+        return NULL;
+    }
+    if (block == (void*) -1) {
+        return NULL;
+    }
+
+	header = get_free_block(size);
+    if (header) {
+        header->is_free = 0;
+        return (void*)(header + 1);
+    }
+	return block;
+}
