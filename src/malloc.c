@@ -26,15 +26,12 @@ void *my_malloc(size_t size)
 {
 	void *block;
     header_t *header;
-	block = sbrk(size);
 
-    if (!size) {
+    block = sbrk(size);
+    if (!size)
         return NULL;
-    }
-    if (block == (void*) -1) {
+    if (block == (void*) -1)
         return NULL;
-    }
-
 	header = get_free_block(size);
     if (header) {
         header->is_free = 0;

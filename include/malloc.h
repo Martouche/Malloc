@@ -16,7 +16,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-
 typedef struct header_s {
 	size_t size;
 	int is_free;
