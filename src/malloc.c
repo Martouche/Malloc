@@ -30,12 +30,18 @@ void *my_malloc(size_t size)
     block = sbrk(size);
     if (!size)
         return NULL;
-    if (block == (void*) -1)
+    if (block == (void*) -1) {
         return NULL;
+    }
 	header = get_free_block(size);
     if (header) {
         header->is_free = 0;
         return (void*)(header + 1);
     }
 	return block;
+}
+
+void show_alloc_mem()
+{
+
 }
