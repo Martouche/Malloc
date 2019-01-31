@@ -13,9 +13,9 @@ SRC=			src/malloc.c
 
 OBJ= 			$(SRC:.c=.o)
 
-CFLAGS=			 -Wall -Wextra -Werror -I./include -g3
+CFLAGS=			-fPIC -Wall -Wextra -Werror -I./include -g3
 
-LDFLAGS=		-fPIC -shared
+LDFLAGS=		-shared
 
 SUCCESS         =       \033[32;1m[Compilation succeeded]\033[0m
 
