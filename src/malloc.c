@@ -10,7 +10,7 @@
 header_t *head = NULL;
 header_t *tail = NULL;
 
-header_t *get_free_block(size_t size)
+/*header_t *get_free_block(size_t size)
 {
 	header_t *curr;
 
@@ -44,4 +44,15 @@ void *my_malloc(size_t size)
 void show_alloc_mem()
 {
 
+}
+*/
+
+void *malloc(size_t size)
+    {
+    void *p;
+    p = sbrk (0);
+/* If sbrk fails , we return NULL */
+    if (sbrk(size) == (void*) -1)
+        return NULL;
+    return p;
 }

@@ -23,5 +23,5 @@ typedef struct header_s {
     struct header_s *prev;
 } header_t;
 
-void *my_malloc(size_t size);
+void *malloc(size_t size);
 #endif
