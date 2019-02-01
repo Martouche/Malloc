@@ -21,3 +21,14 @@ void *malloc(size_t size)
         assert(p == request);
     return p;
 }
+
+void *realloc(void *ptr, size_t size)
+{
+    ptr = sbrk(size);
+    return ptr;
+}
+
+void free(void *ptr)
+{
+    return (void)ptr;
+}
