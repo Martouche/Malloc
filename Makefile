@@ -17,19 +17,17 @@ CFLAGS=         -fPIC -Wall -Wextra -Werror -I./include -g3
 
 LDFLAGS=        -shared
 
-all:            $(NAME)
+all:           	$(NAME)
 
 $(NAME):        $(OBJ)
-                $(CC) $(CFLAGS) $(OBJ) -o $@ $(LDFLAGS)
+				$(CC) $(CFLAGS) $(OBJ) -o $@ $(LDFLAGS)
 clean:
-            rm -f $(OBJ)
-            rm -f *~
-            rm -f \#*\#
-            rm -f *.gch
-            @echo -e "$(OBJRM)"
+			rm -f $(OBJ)
+			rm -f *~
+			rm -f \#*\#
+			rm -f *.gch
 
 fclean:         clean
-            rm -f $(NAME)
-            @echo -e "$(NAMERM)"
+			rm -f $(NAME)
 
 re:         fclean all
