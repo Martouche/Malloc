@@ -12,10 +12,12 @@ header_t *tail = NULL;
 
 void *malloc(size_t size)
 {
-    void *p;
+    void *p = sbrk(0);
+    void *request = sbrk(size);
 
-    p = sbrk(0);
-    if (sbrk(size) == (void*) -1)
+    if (request == (void*) -1)
         return NULL;
+    else
+        assert(p == request);
     return p;
 }

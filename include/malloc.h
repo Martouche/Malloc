@@ -15,6 +15,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <assert.h>
 
 typedef struct header_s {
     size_t size;
