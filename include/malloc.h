@@ -17,9 +17,9 @@
 #include <stdlib.h>
 
 typedef struct header_s {
-	size_t size;
-	int is_free;
-	struct header_s *next;
+    size_t size;
+    int is_free;
+    struct header_s *next;
     struct header_s *prev;
 } header_t;
 
