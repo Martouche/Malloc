@@ -1,7 +1,7 @@
 # Malloc
-Second Year Epitech project, recode the malloc function in C++
+Second Year Epitech project, recode the malloc function in C
 
-Recode the function malloc in C++.
+Recode the function malloc in C.
 
 
 
